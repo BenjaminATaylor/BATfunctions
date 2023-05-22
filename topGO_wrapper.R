@@ -23,8 +23,8 @@ topGO_wrapper = function(geneScores,
       } else                         {geneScores = subset(geneScores, log2FoldChange>0)}
     }
     
-    DEGs = na.omit(geneScores$pvalue)
-    names(DEGs) = rownames(geneScores)[which(is.na(geneScores$pvalue)==FALSE)]  
+    DEGs = na.omit(geneScores$padj)
+    names(DEGs) = rownames(geneScores)[which(is.na(geneScores$padj)==FALSE)]  
     geneScores = DEGs
     
   }
